@@ -7,8 +7,8 @@ angular.module('spBlogger.posts.controllers',[]).controller(
     $scope.posts = $scope.getAllPosts();
   }])
 
-.controller('PostDetailsController', ['$state-Params', '$state', '$scope', 'postFactory',
-function($state-Params, $state, $scope, postFactory) {
+.controller('PostDetailsController', ['$stateParams', '$state', '$scope', 'postFactory',
+function($stateParams, $state, $scope, postFactory) {
 
   $scope.getPostById = function(id) {
     return postFactory.getPostById(id);
@@ -16,4 +16,5 @@ function($state-Params, $state, $scope, postFactory) {
   $scope.closePost = function() {
     $state.go('allPosts');
   };
+  $scope.singlePost = $scope.getPostById($stateParams.id);
 }]);

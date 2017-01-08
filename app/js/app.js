@@ -2,17 +2,11 @@
 
 // Declare app level module which depends on views, and components
 angular.module('spBlogger', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+  'ui.router',
+  'spBlogger.posts',
+  'spBlogger.version'
+]);
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
-
-angular.module('spBlogger').run(['state', function(state) {
+angular.module('spBlogger').run(['$state', function($state) {
   $state.go('allPosts');
 }]);
