@@ -4,6 +4,7 @@
 angular.module('spBlogger', [
   'ui.router',
   'spBlogger.posts',
+  'spBlogger.admin',
   'spBlogger.version'
 ]);
 
