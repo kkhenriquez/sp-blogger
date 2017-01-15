@@ -1,7 +1,7 @@
 angular.module('spBlogger.admin', ['spBlogger.admin.controllers'])
 
-.config(['$stateProvider', '$locationProvider',
-function($stateProvider, $locationProvider) {
+.config(['$stateProvider',
+function($stateProvider) {
   $stateProvider.state('admin', {
     url: '/admin',
     templateUrl: 'modules/admin/views/home.html',
